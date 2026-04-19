@@ -7,7 +7,11 @@ import lombok.Data;
 @Data
 public class TaskDTO {
 
+    private long id;
+
     private String titulo;
+
+    private String subtitulo;
 
     private String descricao;
 

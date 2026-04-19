@@ -17,6 +17,7 @@ public class TaskMapper {
         Task entidy = new Task();
 
         entidy.setTitulo(dto.getTitulo());
+        entidy.setSubtitulo(dto.getSubtitulo());
         entidy.setDescricao(dto.getDescricao());
         entidy.setStatus(StatusTask.PENDENTE);
 
@@ -25,7 +26,9 @@ public class TaskMapper {
     public TaskDTO toDto(Task entidy){
         TaskDTO dto = new TaskDTO();
 
+        dto.setId(entidy.getId());
         dto.setTitulo(entidy.getTitulo());
+        dto.setSubtitulo(entidy.getSubtitulo());
         dto.setDescricao(entidy.getDescricao());
         dto.setStatus(entidy.getStatus());
 

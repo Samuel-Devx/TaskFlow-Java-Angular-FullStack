@@ -1,0 +1,52 @@
+
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-card appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>New Task</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          <mat-form-field appearance="fill">
+            <mat-label>Titulo</mat-label>
+            <input matInput formControlName="titulo" placeholder="Digite o Titulo">
+            <mat-hint>Titulo da Tarefa</mat-hint>
+          </mat-form-field>
+        </p>
+     
+        <mat-form-field>
+          <mat-label>Subtitulo</mat-label>
+          <select matNativeControl formControlName="subtitulo" required>
+            <option value="Criação">Criação</option>
+            <option value="Refatoração">Refatoração</option>
+            <option value="Ajuste">Ajuste</option>
+            <option value="Bug">Bug</option>
+          </select>
+        </mat-form-field>
+
+      </mat-card-content>
+      <mat-card-content>
+        <p>
+          <mat-form-field  appearance="fill">
+            <mat-label>Descrição</mat-label>
+            <textarea matInput formControlName="descricao" placeholder="Detalhe a tarefa"></textarea>
+            <mat-hint>Descrição da tarefa</mat-hint>
+          </mat-form-field>
+        </p>
+         
+        <div class="containerButton">
+          <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" >
+            Criar
+          </button>
+          <button mat-raised-button color="accent"class="example-icon favorite-icon" routerLink="/home" class="return">
+            <mat-icon>arrow_back</mat-icon>
+            <p>Return</p>
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    </form>
+     
+  </div>
+  
+

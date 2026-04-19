@@ -1,0 +1,22 @@
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>{{ task.titulo}}</mat-card-title>
+    <mat-card-subtitle class="subtitle" [ngClass]="getStatusClass(task.subtitulo)">{{ task.subtitulo }}</mat-card-subtitle> 
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{ task.descricao }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-icon-button color="primary" (click)="updateStatus(task.id ,'COMPLETA')">
+        <mat-icon>done_outline</mat-icon>
+    </button>
+    <button mat-icon-button color="primary" (click)="updateStatus(task.id , 'DESATIVADA')">
+        <mat-icon>delete_outline</mat-icon>
+    </button>
+    <button mat-icon-button color="primary">
+        <mat-icon>edit</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card> 

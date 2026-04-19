@@ -1,0 +1,44 @@
+  
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+mat-toolbar{
+    margin-bottom: 19px;
+}
+.buttonAdd{
+    border-radius: 10px;
+    border: none;
+    transition: all 0.8s ease;
+}
+.buttonAdd:hover{
+    cursor: pointer;   
+    background-color: black;
+    color: white; 
+}
+.empty-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+  color: #aaa;
+  opacity: 0.8;
+}
+
+.empty-message mat-icon {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.NameTask{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}   
+
+.task-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  padding: 20px;
+}

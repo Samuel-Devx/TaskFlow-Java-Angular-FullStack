@@ -1,0 +1,29 @@
+mat-card-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 10px;
+}
+mat-card{
+    width: 300px;
+}
+
+p{
+    color: white;
+}
+mat-card-title{
+    color: white;
+}
+
+.criacao {
+    color: #4CAF50; /* Verde para Criação */
+}
+.refatoracao {
+    color: #2196F3; /* Azul para Refatoração */
+}
+.ajuste {
+    color: #FFC107; /* Amarelo para Ajuste */
+}
+.bug {          
+    color: #F44336; /* Vermelho para Bug */
+}

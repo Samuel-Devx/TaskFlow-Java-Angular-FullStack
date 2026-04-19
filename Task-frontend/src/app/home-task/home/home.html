@@ -1,0 +1,39 @@
+<mat-toolbar>
+  <span class="NameTask">Task-Flow</span>
+  <span class="example-spacer"></span>
+  <button mat-min-fab class="example-icon favorite-icon" routerLink="/home/new" class="buttonAddl">
+    <mat-icon>add</mat-icon>
+  </button>
+  <button matIconButton class="example-icon" [matMenuTriggerFor]="menu" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="carregarEventos('COMPLETA')">Task Completas</button>
+    <button mat-menu-item (click)="carregarEventos('DESATIVADA')">Task Excluidas</button>
+    <button mat-menu-item (click)="carregarEventos('PENDENTE')">Task Pendente</button>
+    <button mat-menu-item>Menu All task</button>
+  </mat-menu>
+ 
+</mat-toolbar>
+<div class="containerTask">
+
+  <ng-container *ngIf="tasks.length > 0; else emptyState">
+   <div class="task-container">
+       <app-task-card
+         *ngFor="let task of tasks"
+          [task]="task">
+        </app-task-card>
+      </div>
+  </ng-container>
+
+  <ng-template #emptyState>
+    <div class="empty-message">
+      <mat-icon>assignment</mat-icon>
+      <p>Nenhuma task encontrada</p>
+    </div>
+  </ng-template>
+
+</div>
+
+
+

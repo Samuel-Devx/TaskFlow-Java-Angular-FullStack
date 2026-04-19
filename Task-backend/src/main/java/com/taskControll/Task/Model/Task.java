@@ -12,12 +12,16 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 20)
+    @Column(nullable = false, length = 30)
     private String titulo;
+
+    @Column(nullable = false, length = 20)
+    private String subtitulo;
 
     @Column(nullable = false, length = 100)
     private String descricao;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "status", length = 25)
     private StatusTask status;
 }

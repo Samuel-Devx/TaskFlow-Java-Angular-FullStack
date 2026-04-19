@@ -9,6 +9,7 @@ import com.taskControll.Task.Repository.TaskRepository;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.mapping.Collection;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -45,11 +46,18 @@ public class TaskService {
 
     public TaskDTO alterStats(Long id, StatusTask statusTask){
         Task task = repository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Id não encontrado"));
+                .orElseThrow(() -> new NotFind());
         task.setStatus(statusTask);
         repository.save(task);
         return mapper.toDto(task);
     }
+    public List<TaskDTO> findByStatus(StatusTask statusTask){
+        List<Task> listStatus = repository.findByStatus(statusTask);
+        List<TaskDTO> dtos = listStatus.stream()
+                .map(mapper::toDto)
+                .collect(Collectors.toList());
 
+        return dtos;
+    }
 
 ;  }

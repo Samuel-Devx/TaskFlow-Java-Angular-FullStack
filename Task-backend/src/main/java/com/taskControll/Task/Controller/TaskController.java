@@ -33,9 +33,17 @@ public class TaskController {
         return ResponseEntity
                 .ok(service.findById(id));
     }
+
+    @CrossOrigin(origins = "http://localhost:4200")
     @PatchMapping("/{id}/{task}")
     public ResponseEntity<TaskDTO> alterStats(@PathVariable Long id, @RequestBody StatusTask status){
         return ResponseEntity.ok(service.alterStats(id, status));
     }
+
+    @GetMapping("/status/{statusTask}")
+    public ResponseEntity<List<TaskDTO>> findByStatus(@PathVariable StatusTask statusTask){
+        return ResponseEntity.ok(service.findByStatus(statusTask));
+    }
+
 
 }
