@@ -26,9 +26,11 @@ export class Home {
   readonly dialog = inject(MatDialog);
   openDialog() {
     this.dialogRef = this.dialog.open(Dialog);
+  
   }
 
- 
+  
+
   carregarEventos(status : string = 'PENDENTE' ) {
     this.taskService.listarPorStatus(status).subscribe({
       next: (res: ITask[]) => {

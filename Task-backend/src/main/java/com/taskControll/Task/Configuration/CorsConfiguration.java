@@ -19,6 +19,6 @@ public class CorsConfiguration {
                         .allowedHeaders("*")
                         .allowCredentials(true);
             }
-        };
+        };  
     }
 }

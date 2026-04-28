@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TaskService } from '../task-service';
 import { error } from 'console';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DialogDelete } from '../shared/component/dialog-delete/dialog-delete';
 @Component({
   selector: 'app-new-task',
   standalone: false,
@@ -14,8 +15,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class NewTask {
   form: FormGroup
-  
-  constructor(private fb: FormBuilder, private taskService: TaskService, private snackBar: MatSnackBar) {
+   dialogRef: any
+  constructor(private fb: FormBuilder, private taskService: TaskService, private snackBar: MatSnackBar, ) {
     this.form = this.fb.group({
       titulo:['', Validators.required],
       descricao:['', [Validators.required, Validators.minLength(10)]],
@@ -28,6 +29,7 @@ export class NewTask {
       duration: 3000, 
     });
   }
+
 
 
   onSubmit(){

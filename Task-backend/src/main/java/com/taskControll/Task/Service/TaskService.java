@@ -51,6 +51,19 @@ public class TaskService {
         repository.save(task);
         return mapper.toDto(task);
     }
+
+    public TaskDTO updateTask(Long id, TaskDTO taskNew){
+        Task task = repository.findById(id)
+                .orElseThrow(()-> new NotFind());
+
+        Task newTask = mapper.toEntity(taskNew);
+
+        task.setSubtitulo(newTask.getSubtitulo());
+        task.setTitulo(newTask.getTitulo());
+        task.setDescricao(newTask.getDescricao());
+        repository.save(task);
+        return mapper.toDto(task);
+    }
     public List<TaskDTO> findByStatus(StatusTask statusTask){
         List<Task> listStatus = repository.findByStatus(statusTask);
         List<TaskDTO> dtos = listStatus.stream()

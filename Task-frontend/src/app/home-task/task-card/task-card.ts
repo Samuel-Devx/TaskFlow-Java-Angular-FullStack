@@ -16,9 +16,9 @@ export class TaskCard {
 
   @Input() task!: ITask;
   readonly dialog = inject(MatDialog);
+  readonly Deletedialog = inject(MatDialog);
   
-  constructor(private taskService: TaskService, private snackBar: MatSnackBar){  
-
+  constructor(private taskService: TaskService, private snackBar: MatSnackBar, ){  
   }
 
   onSnackBar(message: string) {
@@ -47,6 +47,16 @@ export class TaskCard {
       return '';
   }
 }
+
+
+  onDelete(){
+    this.Deletedialog.open(DialogDelete).afterClosed().subscribe((result) => {
+      if (result) {
+        this.updateStatus(this.task.id, "DESATIVADA");
+      }
+    });
+  }
+  
   onOpenDialog(){
     this.dialog.open(DialogDelete)
   }

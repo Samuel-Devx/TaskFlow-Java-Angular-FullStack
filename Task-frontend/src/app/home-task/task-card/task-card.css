@@ -16,14 +16,14 @@ mat-card-title{
 }
 
 .criacao {
-    color: #4CAF50; /* Verde para Criação */
+    color: #4CAF50; 
 }
 .refatoracao {
-    color: #2196F3; /* Azul para Refatoração */
+    color: #2196F3; 
 }
 .ajuste {
-    color: #FFC107; /* Amarelo para Ajuste */
+    color: #FFC107; 
 }
 .bug {          
-    color: #F44336; /* Vermelho para Bug */
+    color: #F44336; 
 }

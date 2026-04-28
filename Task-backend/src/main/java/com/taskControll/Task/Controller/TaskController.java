@@ -45,5 +45,9 @@ public class TaskController {
         return ResponseEntity.ok(service.findByStatus(statusTask));
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<TaskDTO> updateTask(@PathVariable Long id , @RequestBody TaskDTO taskDTO){
+       return ResponseEntity.ok(service.updateTask(id, taskDTO));
+    }
 
 }
