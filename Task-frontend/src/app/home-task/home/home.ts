@@ -36,14 +36,23 @@ export class Home {
       next: (res: ITask[]) => {
         this.tasks = res;
         this.cd.detectChanges();
-        if (this.tasks.length === 0){
-      this.openDialog();
-   }
  
       },
       error: (err: any) => console.error(err)
     });
    
-   
 }
+onList(){
+      this.taskService.listTask().subscribe({
+        next: (res: ITask[]) => {
+          this.tasks = res;
+          this.cd.detectChanges();
+          if (this.tasks.length === 0){
+               this.openDialog();
+      }
+   
+        },
+        error: (err: any) => console.error(err)
+      });
+    }
 }

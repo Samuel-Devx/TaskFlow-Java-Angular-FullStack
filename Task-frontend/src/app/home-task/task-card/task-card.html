@@ -1,4 +1,8 @@
-<mat-card appearance="outlined">
+<mat-card appearance="outlined"  [ngClass]="{
+    'card-completa': task.status === 'COMPLETA',
+    'card-excluida': task.status === 'DESATIVADA',
+    'card-pendente': task.status === 'PENDENTE'
+  }" class="card">
   <mat-card-header>
     <mat-card-title>{{ task.titulo}}</mat-card-title>
     <mat-card-subtitle class="subtitle" [ngClass]="getStatusClass(task.subtitulo)">{{ task.subtitulo }}</mat-card-subtitle> 
@@ -9,13 +13,13 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-icon-button color="primary" (click)="updateStatus(task.id ,'COMPLETA')">
+    <button mat-icon-button color="primary" (click)="updateStatus(task.id ,'COMPLETA')" [disabled]="task.status === 'DESATIVADA' || task.status === 'COMPLETA' ">
         <mat-icon>done_outline</mat-icon>
     </button>
-    <button mat-icon-button color="primary" (click)="onDelete()">
+    <button mat-icon-button color="primary" (click)="onDelete()" [disabled]="task.status === 'DESATIVADA' || task.status === 'COMPLETA'">
         <mat-icon>delete_outline</mat-icon>
     </button>
-    <button mat-icon-button color="primary">
+    <button mat-icon-button color="primary" routerLink="/home/edit/{{task.id}}" [disabled]="task.status === 'DESATIVADA' || task.status === 'COMPLETA'">
         <mat-icon>edit</mat-icon>
     </button>
   </mat-card-actions>

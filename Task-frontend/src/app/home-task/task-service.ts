@@ -20,6 +20,8 @@ export class TaskService {
     return this.http.get<ITask[]>(this.api);
   }
   
+
+  
   listarPorStatus(status: string) {
     return this.http.get<ITask[]>(
       `${this.api}/status/${status}`
