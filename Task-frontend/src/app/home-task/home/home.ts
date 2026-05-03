@@ -5,7 +5,7 @@ import { Route } from '@angular/router';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { Dialog } from '../shared/component/dialog/dialog';
-
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +17,9 @@ export class Home {
 
   tasks: ITask[] = [];
   dialogRef: any;
+fillerContent: any;
+fillerNav: any;
+showFiller: any;
   
   constructor(private taskService: TaskService, private cd: ChangeDetectorRef, private router: Router) {}
 
@@ -40,7 +43,6 @@ export class Home {
       },
       error: (err: any) => console.error(err)
     });
-   
 }
 onList(){
       this.taskService.listTask().subscribe({

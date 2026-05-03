@@ -19,6 +19,11 @@ import { Dialog } from './shared/component/dialog/dialog';
 import { DialogDelete } from './shared/component/dialog-delete/dialog-delete';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
+import { MatListModule } from '@angular/material/list';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 
 @NgModule({
   declarations: [Home, TaskCard, NewTask, Dialog, DialogDelete],
@@ -35,8 +40,10 @@ import { MatButtonModule } from '@angular/material/button';
     MatSnackBarModule,
     MatMenuModule,
     MatButtonModule,
-    MatDialogModule
-   
+    MatDialogModule,
+    MatSidenavModule,
+    MatListModule,
+    MatTooltipModule,
   ],
   exports: [
     HomeTaskRoutingModule,
@@ -45,7 +52,6 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatToolbarModule,
     MatMenuModule,
-  
   ],
 })
 export class HomeTaskModule {}

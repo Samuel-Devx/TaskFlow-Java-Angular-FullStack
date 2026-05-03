@@ -3,6 +3,7 @@ mat-card-actions {
   flex-direction: row;
   justify-content: flex-end;
   gap: 10px;
+  transition: all 0.3s ease;
 }
 mat-card{
     width: 300px;
@@ -57,3 +58,5 @@ mat-card-title{
   background-color: rgba(40, 167, 69, 0.1);
   border-left: 4px solid #28a745;
 }
+
+

@@ -1,3 +1,5 @@
+
+
 <mat-toolbar>
   <span class="NameTask">Task-Flow</span>
   <span class="example-spacer"></span>
@@ -8,15 +10,26 @@
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="carregarEventos('COMPLETA')">Task Completas</button>
-    <button mat-menu-item (click)="carregarEventos('DESATIVADA')">Task Excluidas</button>
-    <button mat-menu-item (click)="carregarEventos('PENDENTE')">Task Pendente</button>
-    <button mat-menu-item (click)="onList()">Menu All task</button>
+    <button mat-menu-item (click)="carregarEventos('COMPLETA')">
+      <mat-icon>done</mat-icon>
+      Completas
+    </button>
+    <button mat-menu-item (click)="carregarEventos('DESATIVADA')">
+      <mat-icon>delete</mat-icon>
+      Excluidas
+    </button>
+    <button mat-menu-item (click)="carregarEventos('PENDENTE')">
+      <mat-icon>pending</mat-icon>
+      Task Pendente
+    </button>
+    <button mat-menu-item (click)="onList()">
+      <mat-icon>inbox</mat-icon>
+      All Tasks
+    </button>
   </mat-menu>
  
 </mat-toolbar>
 <div class="containerTask">
-
   <ng-container *ngIf="tasks.length > 0; else emptyState">
    <div class="task-container">
        <app-task-card
@@ -34,6 +47,3 @@
   </ng-template>
 
 </div>
-
-
-
